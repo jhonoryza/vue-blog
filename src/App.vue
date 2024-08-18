@@ -14,14 +14,16 @@ const today = weekday[now.getDay()];
 
 <template>
   <div class="container mx-auto flex flex-col min-h-screen font-rubik">
-    <nav class="flex justify-between items-center uppercase text-base font-semibold py-4">
+    <nav class="flex flex-col sm:flex-row gap-2 sm:gap-0 justify-between items-start sm:items-center uppercase text-base font-semibold
+    p-4 fixed sm:relative bg-white sm:bg-transparent shadow-lg sm:shadow-none w-full"
+    >
       <RouterLink
-        to="/"
-        class="text-white bg-primary p-2 text-xl hover:bg-link hover:-rotate-6"
+          to="/"
+          class="text-white bg-primary p-2 text-xl hover:bg-link hover:-rotate-6"
       >
         Fajar SP
       </RouterLink>
-      <div class="flex gap-12">
+      <div class="flex gap-2 sm:gap-12">
         <RouterLink to="/articles" class="text-primary hover:bg-link hover:text-white p-2">
           Articles
         </RouterLink>
@@ -33,30 +35,29 @@ const today = weekday[now.getDay()];
         </RouterLink>
       </div>
     </nav>
-    <main class="grow">
-      <RouterView />
+    <main class="mt-20 sm:mt-0 grow">
+      <RouterView/>
     </main>
     <footer>
-      <div class="flex justify-between items-center text-secondary text-sm">
-        <div>
-          © Copyright 2024 Fajar SP<br />Code snippets are
+      <div class="flex flex-col sm:flex-row justify-between items-center text-secondary text-sm p-4">
+        <div class="self-start">
+          © Copyright 2024 Fajar SP<br/>Code snippets are
           <a
-            href="https://opensource.org/licenses/MIT"
-            class="hover:text-link hover:underline"
-            target="_blank"
+              href="https://opensource.org/licenses/MIT"
+              class="hover:text-link hover:underline"
+              target="_blank"
           >
             MIT licensed
           </a>
-          <br />
-          <RouterLink to="/disclaimer" class="hover:text-link hover:underline">
+          <br/>
+          <RouterLink to="/disclaimer" class="text-link hover:text-link-hover hover:underline">
             Disclaimer
           </RouterLink>
         </div>
-        <div>
-          <i
-            >Enjoy the rest of your <span>{{ today }}</span
-            >!</i
-          >
+        <div class="self-end">
+          <i>
+            Enjoy the rest of your <span>{{ today }}</span>!
+          </i>
         </div>
       </div>
     </footer>
