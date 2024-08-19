@@ -15,7 +15,7 @@ const today = weekday[now.getDay()];
 <template>
   <div class="container mx-auto flex flex-col min-h-screen font-rubik">
     <nav class="flex flex-col sm:flex-row gap-2 sm:gap-0 justify-between items-start sm:items-center uppercase text-base font-semibold
-    p-4 fixed sm:relative bg-white sm:bg-transparent shadow-lg sm:shadow-none w-full"
+    p-4 fixed sm:relative bg-white sm:bg-transparent shadow-lg sm:shadow-none w-full z-50"
     >
       <RouterLink
           to="/"
